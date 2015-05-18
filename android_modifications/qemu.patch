@@ -1,0 +1,28 @@
+From 098b4cef93aab30b2010b56b50524da85741217e Mon Sep 17 00:00:00 2001
+From: Antonio Bianchi - black <antoniob@cs.ucsb.edu>
+Date: Wed, 13 May 2015 19:53:38 -0700
+Subject: [PATCH 797/797] p1
+
+---
+ kvm-all.c |    5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/kvm-all.c b/kvm-all.c
+index 2865b2f..32a0382 100644
+--- a/kvm-all.c
++++ b/kvm-all.c
+@@ -446,7 +446,10 @@ int kvm_init(int smp_cpus)
+         goto err;
+     }
+ 
+-    s->vmfd = kvm_ioctl(s, KVM_CREATE_VM, 0);
++    do {
++        s->vmfd = kvm_ioctl(s, KVM_CREATE_VM, 0);
++        fprintf(stderr, "Retrying KVM_CREATE_VM...\n");
++    } while (s->vmfd < 0 && (-EINTR == s->vmfd || -EAGAIN == s->vmfd));
+     if (s->vmfd < 0) {
+         ret = -errno;
+         fprintf(stderr, "ioctl(KVM_CREATE_VM) failed: %s\n", strerror(errno));
+-- 
+1.7.9.5
+

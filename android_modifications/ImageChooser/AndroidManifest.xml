@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.imagechooser"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+
+    
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" /> 
+    <uses-permission android:name="android.permission.TRUST_VERIFICATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.imagechooser.MainActivity"
+            android:label="@string/app_name" > 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <service
+            android:name=".TopWindowService"
+            android:label="@string/app_name" >
+        </service>
+
+        <receiver android:name="com.example.imagechooser.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        
+    </application>
+
+</manifest>

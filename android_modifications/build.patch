@@ -1,0 +1,27 @@
+From 41f787cb70394af56c559a0acd3510caa0e2738c Mon Sep 17 00:00:00 2001
+From: Antonio Bianchi - black <antoniob@cs.ucsb.edu>
+Date: Wed, 13 May 2015 18:58:01 -0700
+Subject: [PATCH 6247/6247] p1
+
+---
+ target/product/generic_no_telephony.mk |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/target/product/generic_no_telephony.mk b/target/product/generic_no_telephony.mk
+index 1155b4e..a522887 100644
+--- a/target/product/generic_no_telephony.mk
++++ b/target/product/generic_no_telephony.mk
+@@ -47,7 +47,9 @@ PRODUCT_PACKAGES := \
+     bluetooth-health \
+     hostapd \
+     wpa_supplicant.conf \
+-    WallpaperCropper
++    WallpaperCropper \
++    ImageChooser
++
+ 
+ PRODUCT_PACKAGES += \
+     audio \
+-- 
+1.7.9.5
+

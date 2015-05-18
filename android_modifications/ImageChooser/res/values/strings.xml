@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ImageChooser</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="explanation_text">Select an image from the following list.</string>
+    <string name="explanation_test2">The selected image will be your \&quot;security companion\&quot;.\n\n
+        You should always check its presence at the bottom of the screen before
+         performing any sensitive operation (e.g., logging in an app, inserting sensitive information, ...)\n\n</string>
+    <string name="done_button">Done!</string>
+    <string name="selected_image">Selected image:</string>
+    <string name="ok">Ok</string>
+    <string name="x">xxx</string>
+
+</resources>
